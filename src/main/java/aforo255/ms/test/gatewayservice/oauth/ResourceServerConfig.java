@@ -31,7 +31,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/api/security/oauth/**").permitAll()
-                .antMatchers("/api/invoice/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/api/invoices/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/api/pay/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/api/transaction/**").hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated().and().cors()
